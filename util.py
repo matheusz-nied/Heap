@@ -33,3 +33,8 @@ def count_array(file):
 def print_array(array):
     for line in array:
         print(line)
+
+def troca(array, indice1, indice2):
+    aux = array[indice1]
+    array[indice1] = array[indice2]
+    array[indice2] = aux
