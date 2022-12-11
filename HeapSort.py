@@ -11,7 +11,7 @@ def ESQ(i):
 
 
 def DIR(i):
-    return int((i*2) + 2)
+    return int((2*i) + 2)
 
 
 def constroi_heap(array, tam, quantidade_comparacao, quantidade_troca):
@@ -20,7 +20,8 @@ def constroi_heap(array, tam, quantidade_comparacao, quantidade_troca):
     while(i >= 0):
         quantidade_comparacao[0] += 1
 
-        i = PAI(i)
+        i -= 1
+        #i = PAI(i)
         heapifica(array, i, tam, quantidade_comparacao, quantidade_troca)
         if(i == 0):
             quantidade_comparacao[0] += 1
@@ -34,7 +35,7 @@ def heapifica(array, i, tam, quantidade_comparacao, quantidade_troca):
     right = DIR(i)
 
     quantidade_comparacao[0] += 1
-
+    
     if(left < tam and array[left][0] > array[maior][0]):
         maior = ESQ(i)
         
